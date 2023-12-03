@@ -1,0 +1,11 @@
+---
+- name: test to run playbook
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: ls
+      shell: ls
+      register: result
+    - name: show result
+      debug:
+        msg: "{{ result.stdout }}"
