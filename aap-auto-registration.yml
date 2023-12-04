@@ -54,6 +54,3 @@
         method: POST
         status_code:
           - 201
-        body_format: json
-        body:
-          limit: "edge-{{ ansible_default_ipv4.macaddress | replace(':','') }}"
