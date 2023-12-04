@@ -16,7 +16,7 @@
   tasks:
     - name: find the id of {{ controller_inventory }}
       ansible.builtin.uri:
-        url: "{{ controller_url }}/inventories?name={{ controller_inventory | regex_replace(' ', '%20') }}"
+        url: "{{ controller_url }}/inventories/?name={{ controller_inventory | regex_replace(' ', '%20') }}"
       register: controller_inventory_lookup
 
     - name: set inventory id fact
