@@ -41,7 +41,7 @@
 
     - name: find the id of {{ provisioning_template }}
       ansible.builtin.uri:
-        url: "{{ controller_url }}/workflow_job_templates?name={{ provisioning_template | regex_replace(' ', '%20') }}"
+        url: "{{ controller_url }}/workflow_job_templates/?name={{ provisioning_template | regex_replace(' ', '%20') }}"
       register: job_template_lookup
 
     - name: set the id of {{ provisioning_template }}
