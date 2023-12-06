@@ -1,0 +1,13 @@
+---
+- name: Get Pods Status
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: run oc command
+      cmd: |
+        export KUBECONFIG=/var/lib/microshift/resources/kubeadmin/kubeconfig
+        oc get pods -A
+      register: result
+    - name: show result
+      debug:
+        msg: "{{ result.stdout }}"
